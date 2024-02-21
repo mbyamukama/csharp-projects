@@ -1,0 +1,17 @@
+﻿<Window x:Class="JMHotel.ChangeQty"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Change Quantity" Height="298.377" Width="508.836" Loaded="Window_Loaded">
+    <Viewbox>
+        <Grid Margin="5,5,12,18" Width="469">
+            <Label Content="Item" Height="35" HorizontalAlignment="Left" Margin="20,21,0,0" Name="label2" VerticalAlignment="Top" FontSize="18" FontFamily="Arial" />
+
+            <Label Content="Quantity" Height="35" HorizontalAlignment="Left" Margin="20,79,0,0" Name="label3" VerticalAlignment="Top" FontSize="18" FontFamily="Arial" />
+            <TextBox Height="35" HorizontalAlignment="Left" Margin="141,79,0,0" Name="txtQty" VerticalAlignment="Top" Width="174"  FontSize="18" FontFamily="Arial" TextChanged="txtQty_TextChanged"/>
+            <Label Content="Price" Height="35" HorizontalAlignment="Left" Margin="20,144,0,0" Name="label10" VerticalAlignment="Top" FontSize="18" FontFamily="Arial" />
+            <Button Name="btnAdd" FontSize="20" Content="Add" Height="44" Margin="370,202,10,0" VerticalAlignment="Top" Click="btnAdd_Click" />
+            <Label Name="lblItemName" Content="Item" BorderBrush="Black" BorderThickness="1" Height="35" HorizontalAlignment="Left" Margin="141,21,0,0"  VerticalAlignment="Top" FontSize="18" FontFamily="Arial" Width="316" />
+            <Label x:Name="lblNewPrice" Content="Item" BorderBrush="Black" BorderThickness="1" Height="35" HorizontalAlignment="Left" Margin="141,143,0,0"  VerticalAlignment="Top" FontSize="18" FontFamily="Arial" Width="316" />
+        </Grid>
+    </Viewbox>
+</Window>

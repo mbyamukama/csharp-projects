@@ -1,0 +1,97 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using GenericUtilities;
+
+namespace VUARMS
+{
+    /// <summary>
+    /// Interaction logic for Results.xaml
+    /// </summary>
+    public partial class Results : Window
+    {
+        string vurefno = "";
+        float cgpa = 0.00F;
+        DataTable results = null;
+
+        public Results(string vurefno)
+        {
+            InitializeComponent();
+            this.vurefno = vurefno;
+            lblName.Content = "Results for " + vurefno;
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            results = VUARMSFBDataHelper.GetResults(vurefno);
+
+            cgpa = AppUtilities.CalculateCGPA(results);
+
+            resultsDataGrid.ItemsSource =results.DefaultView;
+            
+            lblCGPA.Content = "CGPA: " + Math.Round(cgpa, 2);
+
+            if (AppUtilities.CurrentUser.CLRLevel < 3)
+            {
+                resultsDataGrid.IsReadOnly = true;
+            }
+        }
+
+        private void btnGo_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+        private void btnPrint_Click(object sender, RoutedEventArgs e)
+        {
+            FixedPage page = new FixedPage();
+
+            Label label = new Label()
+            {
+                Content = "RESULTS FOR " + vurefno + ":\t" + VUARMSFBDataHelper.GetStudentDetails(vurefno).Rows[0]["FULLNAME"].ToString(),
+                Margin = new Thickness(30, 60, 0, 0),
+                HorizontalAlignment = System.Windows.HorizontalAlignment.Left,
+                VerticalAlignment = System.Windows.VerticalAlignment.Top,
+                FontFamily=new FontFamily("Gadugi"),
+                FontSize = 14,
+                Height=40
+            };
+
+            page.Children.Add(label);
+            Grid grid = Utilities.LabelTable(results, new Thickness(1), 12, new int[] { 100, 300, 30, 50, 30, 50, 50 });
+            grid.Margin = new Thickness(30,150,0,0);
+
+            page.Children.Add(grid);
+
+            Label labelCGPA = new Label()
+            {
+                Content = "CGPA: " + Math.Round(cgpa, 2) + " CU: "+ results.Columns["CU"].AsEnumerable<int>().Sum(),
+                Margin = new Thickness(30, results.Rows.Count * 30 + 200, 0, 0),
+                HorizontalAlignment = System.Windows.HorizontalAlignment.Left
+            };
+
+            page.Children.Add(labelCGPA);
+
+            PageContent pc = new PageContent();
+            pc.Child = page;
+            FixedDocument doc = new FixedDocument();
+            doc.Pages.Add(pc);
+
+            PrintDialog pd = new PrintDialog();
+            if (pd.ShowDialog() == true)
+            {
+                pd.PrintDocument(doc.DocumentPaginator, vurefno);
+            }
+            
+        }
+    }
+}
+

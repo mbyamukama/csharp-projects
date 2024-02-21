@@ -1,0 +1,63 @@
+﻿<Window x:Class="FRESUgandaERP.Reports"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Reports" Height="618" Width="868" Loaded="Window_Loaded">
+    <Viewbox>
+    <Grid HorizontalAlignment="Left" Width="876">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="589*"/>
+            <ColumnDefinition Width="287*"/>
+        </Grid.ColumnDefinitions>
+        <DocumentViewer Height="409" HorizontalAlignment="Left" Margin="20,161,0,0" Name="documentViewer1" VerticalAlignment="Top" Width="820" Grid.ColumnSpan="2" />
+        <ComboBox Height="23" HorizontalAlignment="Left" Margin="139,12,0,0" Name="cbxReportType" VerticalAlignment="Top" Width="120" SelectionChanged="cbxReportType_SelectionChanged" >
+            <ComboBoxItem Content="CLIENTS"/>
+            <ComboBoxItem Content="FINANCE" />
+            <ComboBoxItem Content="DEBTORS" />
+            <ComboBoxItem Content="COLLECTIONS" />
+            <ComboBoxItem Content="PAYMENTS" />
+            <ComboBoxItem Content="MAINTENANCE" />
+        </ComboBox>
+        <Label Content="Report Type" Height="28" HorizontalAlignment="Left" Margin="26,12,0,0" Name="label1" VerticalAlignment="Top" />
+        <GroupBox Name="gpbxFilter" Header="Filter" BorderBrush="Black" HorizontalAlignment="Left" Margin="21,41,0,0" VerticalAlignment="Top" RenderTransformOrigin="-3.056,-1.217" Height="104" Width="820" Grid.ColumnSpan="2">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="15*"/>
+                    <ColumnDefinition Width="8*"/>
+                    <ColumnDefinition Width="261*"/>
+                    <ColumnDefinition Width="524*"/>
+                </Grid.ColumnDefinitions>
+                <ComboBox Height="23" HorizontalAlignment="Left" Margin="89,1,0,0" x:Name="cbxPaymentType" VerticalAlignment="Top" Width="120" SelectionChanged="cbxReportType_SelectionChanged" Grid.Column="2">
+                    <ComboBoxItem Content="CASH"/>
+                    <ComboBoxItem Content="MOBILE MONEY"/>
+                    <ComboBoxItem Content="BANK DEPOSIT"/>
+                    <ComboBoxItem Content="CHEQUE"/>
+                    <ComboBoxItem Content="ALL"/>
+                </ComboBox>
+                <Label Content="Type" Height="28" HorizontalAlignment="Left" Margin="18,1,0,0" x:Name="label1_Copy" VerticalAlignment="Top" Grid.Column="2" />
+                <ComboBox Height="23" HorizontalAlignment="Left" Margin="128.075,2,0,0" x:Name="cbxEnergyCentre" VerticalAlignment="Top" Width="120" SelectionChanged="cbxEnergyCentre_SelectionChanged" Grid.Column="3">
+                    <ComboBoxItem Content="BUSHENYI"/>
+                    <ComboBoxItem Content="ISINGIRO"/>
+                    <ComboBoxItem Content="KASHARI"/>
+                    <ComboBoxItem Content="RWAMPARA"/>
+                    <ComboBoxItem Content="ALL"/>
+                </ComboBox>
+                <Label Content="Energy Centre" Height="29" HorizontalAlignment="Left" Margin="8.075,2,0,0" x:Name="label1_Copy1" VerticalAlignment="Top" Grid.Column="3" />
+                <ComboBox Height="23" HorizontalAlignment="Left" Margin="389.075,1,0,0" x:Name="cbxServiceLevel" VerticalAlignment="Top" Width="120" SelectionChanged="cbxServiceLevel_SelectionChanged"  Grid.Column="3">
+                    <ComboBoxItem Content="1"/>
+                    <ComboBoxItem Content="2"/>
+                    <ComboBoxItem Content="3"/>
+                    <ComboBoxItem Content="4"/>
+                    <ComboBoxItem Content="4+"/>
+                    <ComboBoxItem Content="ALL"/>
+                </ComboBox>
+                <Label Content="Service" Height="28" HorizontalAlignment="Left" Margin="306.075,3,0,0" x:Name="label1_Copy2" VerticalAlignment="Top" Grid.Column="3" />
+                <DatePicker Name="fromdatePicker" HorizontalAlignment="Left" Margin="91,39,0,0" VerticalAlignment="Top" Width="118" Grid.Column="2"/>
+                <DatePicker Name="todatePicker" HorizontalAlignment="Left" Margin="131.075,42,0,0" VerticalAlignment="Top" Width="118" Grid.Column="3"/>
+                <Label Content="From" Height="28" HorizontalAlignment="Left" Margin="17,43,0,0" x:Name="label1_Copy3" VerticalAlignment="Top" Grid.Column="2" />
+                <Label Content="to" Height="28" HorizontalAlignment="Left" Margin="32.075,44,0,0" x:Name="label1_Copy4" VerticalAlignment="Top" Grid.Column="3" />
+                <Button Name="btnSubmit" Content="Submit" HorizontalAlignment="Left" Margin="431.075,44,0,0" VerticalAlignment="Top" Width="78" Click="btnSubmit_Click" Grid.Column="3"/>
+            </Grid>
+        </GroupBox>
+    </Grid>
+    </Viewbox>
+</Window>

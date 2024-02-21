@@ -1,0 +1,10 @@
+﻿<Window x:Class="FRESUgandaERP.LogWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Log Window" Height="410" Width="621" Loaded="Window_Loaded">
+    <Grid>
+        <DataGrid AutoGenerateColumns="true" CanUserDeleteRows="False" HorizontalAlignment="Left"  x:Name="dataGridResults" Width="598" BorderBrush="#FF141313" Margin="9,42,0,21"/>
+
+
+    </Grid>
+</Window>

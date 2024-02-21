@@ -1,0 +1,40 @@
+﻿<UserControl x:Class="FRESUGERP.AppUtilities.BillDocument"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d" 
+             d:DesignHeight="398" d:DesignWidth="824">
+    <Grid Width="810" Height="389">
+        <Label Content="CLIENT ID" Height="28" HorizontalAlignment="Left" Margin="499,20,0,0" Name="lblClientId" VerticalAlignment="Top" Width="300" BorderBrush="Black" BorderThickness="1" />
+        <Image Height="122" HorizontalAlignment="Left" Margin="12,20,0,0" Name="image1" Stretch="Fill" VerticalAlignment="Top" Width="300" Source="/FRESUGERP.AppUtilities;component/freslogo.png" />
+        <Label BorderBrush="Black" BorderThickness="1" Content="CLIENT NAME:" Height="28" HorizontalAlignment="Left" Margin="499,47,0,0" Name="lblClientName" VerticalAlignment="Top" Width="300" />
+        <Label BorderBrush="Black" BorderThickness="1" Content="BILL NO:" Height="28" HorizontalAlignment="Left" Margin="499,74,0,0" Name="lblBillNo" VerticalAlignment="Top" Width="300"/>
+        <Label BorderBrush="Black" BorderThickness="1" Content="BILL DATE:" Height="28" HorizontalAlignment="Left" Margin="499,101,0,0" Name="lblBillDate" VerticalAlignment="Top" Width="300"/>
+        <Label BorderBrush="Black" BorderThickness="1" Content="BILL PERIOD:" Height="28" HorizontalAlignment="Left" Margin="499,128,0,0" Name="lblBillPeriod" VerticalAlignment="Top" Width="300"/>
+        <Label BorderBrush="Black" BorderThickness="1" Content="CONN. FEES BAL:" Height="28" HorizontalAlignment="Left" Margin="12,162,0,0" Name="lblConnBal1" VerticalAlignment="Top" Width="300" FontSize="13" />
+        <Label BorderBrush="Black" BorderThickness="1" Content="SERVICE BAL B/F:" Height="28" HorizontalAlignment="Left" Margin="12,189,0,0" Name="lblServBBF1" VerticalAlignment="Top" Width="300" FontSize="13" />
+        <Label BorderBrush="Black" BorderThickness="1" Content="SERVICE CURR:" Height="28" HorizontalAlignment="Left" Margin="12,216,0,0" Name="lblServCurr" VerticalAlignment="Top" Width="300" FontSize="13" />
+        <Label BorderBrush="Black" BorderThickness="1" Content="TOT OUTSTDNG:" Height="28" HorizontalAlignment="Left" Margin="12,243,0,0" Name="lblTotOutStdg" VerticalAlignment="Top" Width="300" FontSize="13" />
+        <Label BorderBrush="Black" BorderThickness="1" Content="CONNECTION FEES" Height="28" HorizontalAlignment="Left" Margin="12,283,0,0" Name="label5" VerticalAlignment="Top" Width="298" FontSize="13" HorizontalContentAlignment="Center" Background="Yellow" FontWeight="Black"></Label>
+        <Label BorderBrush="Black" BorderThickness="1" Content="SERVICE FEES" Height="28" HorizontalAlignment="Left" Margin="309,283,0,0" Name="label6" VerticalAlignment="Top" Width="394" FontSize="13" HorizontalContentAlignment="Center" Background="GreenYellow" FontWeight="Black" />
+        <Label BorderBrush="Black" BorderThickness="1" Content="TOTAL" Height="28" HorizontalAlignment="Left" Margin="701,283,0,0" Name="label7" VerticalAlignment="Top" Width="92" FontSize="13" HorizontalContentAlignment="Center" Background="Cyan" FontWeight="Black" />
+        <Label BorderBrush="Black" BorderThickness="1" Content="BILLED" Height="28" HorizontalAlignment="Left" Margin="12,310,0,0" Name="label8" VerticalAlignment="Top" Width="100" FontSize="13" HorizontalContentAlignment="Center" />
+        <Label BorderBrush="Black" BorderThickness="1" Content="RECEIVED" Height="28" HorizontalAlignment="Left" Margin="111,310,0,0" Name="label9" VerticalAlignment="Top" Width="100" FontSize="13" HorizontalContentAlignment="Center" />
+        <Label BorderBrush="Black" BorderThickness="1" Content="BALANCE" Height="28" HorizontalAlignment="Left" Margin="210,310,0,0" Name="label10" VerticalAlignment="Top" Width="100" FontSize="13" HorizontalContentAlignment="Center" />
+        <Label BorderBrush="Black" BorderThickness="1" Content="1 - 30 days" HorizontalAlignment="Left" Margin="309,310,0,51" Name="label12" Width="99" FontSize="12" HorizontalContentAlignment="Center" />
+        <Label BorderBrush="Black" BorderThickness="1" Content="31 - 60 days" Height="28" HorizontalAlignment="Left" Margin="407,310,0,0" Name="label13" VerticalAlignment="Top" Width="99" FontSize="12" HorizontalContentAlignment="Center" />
+        <Label BorderBrush="Black" BorderThickness="1" Content="61 - 90 days" Height="28" HorizontalAlignment="Left" Margin="505,310,0,0" Name="label14" VerticalAlignment="Top" Width="99" FontSize="12" HorizontalContentAlignment="Center" />
+        <Label BorderBrush="Black" BorderThickness="1" Content="over 90 days" Height="28" HorizontalAlignment="Left" Margin="603,310,0,0" Name="label24" VerticalAlignment="Top" Width="99" FontSize="12" HorizontalContentAlignment="Center" />
+        <Label BorderBrush="Black" BorderThickness="1" Content="25000" Height="28" HorizontalAlignment="Left" Margin="12,337,0,0" Name="lblConnBilled" VerticalAlignment="Top" Width="100" FontSize="13" HorizontalContentAlignment="Center" />
+        <Label BorderBrush="Black" BorderThickness="1" Content="25000" Height="28" HorizontalAlignment="Left" Margin="111,337,0,0" Name="lblConnRec" VerticalAlignment="Top" Width="100" FontSize="13" HorizontalContentAlignment="Center" />
+        <Label BorderBrush="Black" BorderThickness="1" Height="28" HorizontalAlignment="Left" Margin="210,337,0,0" Name="lblConnBal2" VerticalAlignment="Top" Width="100" Content="35000" FontSize="13" HorizontalContentAlignment="Center" />
+        <Label BorderBrush="Black" BorderThickness="1" Content="40000" Height="28" HorizontalAlignment="Left" Margin="309,337,0,0" Name="lblServ1to30" VerticalAlignment="Top" Width="99" FontSize="13" HorizontalContentAlignment="Center" />
+        <Label BorderBrush="Black" BorderThickness="1" Content="40000" Height="28" HorizontalAlignment="Right" Margin="0,337,304,0" Name="lblServ31to60" VerticalAlignment="Top" Width="99" FontSize="13" HorizontalContentAlignment="Center" />
+        <Label BorderBrush="Black" BorderThickness="1" Content="40000" Height="28" Margin="505,337,206,0" Name="lblServ61to90" VerticalAlignment="Top" FontSize="13" HorizontalContentAlignment="Center" Width="99" />
+        <Label BorderBrush="Black" BorderThickness="1" Content="60000" Height="28" HorizontalAlignment="Left" Margin="603,337,0,0" Name="lblServOver90" VerticalAlignment="Top" Width="99" FontSize="13" HorizontalContentAlignment="Center" />
+        <Label BorderBrush="Black" BorderThickness="1" Content="200000" Height="28" HorizontalAlignment="Left" Margin="701,337,0,0" Name="lblTotal" VerticalAlignment="Top" Width="92" FontSize="13" HorizontalContentAlignment="Center" />
+        <Label BorderBrush="Black" BorderThickness="1" Height="28" HorizontalAlignment="Left" Margin="701,310,0,0" Name="label16" VerticalAlignment="Top" Width="92" FontSize="13" HorizontalContentAlignment="Center" />
+        <Label BorderBrush="Black" BorderThickness="1" Content="GRACE PERIOD:" Height="28" HorizontalAlignment="Left" Margin="499,155,0,0" x:Name="lblGracePeriod" VerticalAlignment="Top" Width="300"/>
+    </Grid>
+</UserControl>

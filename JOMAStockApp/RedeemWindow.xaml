@@ -1,0 +1,15 @@
+﻿<Window x:Class="StockApp.RedeemWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:StockApp"
+        mc:Ignorable="d"
+        Title="Redeem" Height="250" Width="680.382" ResizeMode="NoResize" Loaded="Window_Loaded">
+    <Grid>
+        <Label Content="Redeem Amount" Height="63" HorizontalAlignment="Left" Margin="15,145,0,0" x:Name="label1" VerticalAlignment="Top" FontSize="36" />
+        <TextBox BorderBrush="Black" Height="49" Text="" HorizontalAlignment="Left" Margin="303,159,0,0" x:Name="txtRedeemAmt" VerticalAlignment="Top" Width="361" FontSize="36" KeyDown="txtRedeemAmt_KeyDown"/>
+        <Label Content="Name" Height="50" HorizontalAlignment="Left" Margin="15,10,0,0" x:Name="lblCustName" VerticalAlignment="Top" FontSize="36" Width="649" />
+        <Label Content="Points" Height="50" HorizontalAlignment="Left" Margin="15,79,0,0" x:Name="lblPointsValue" VerticalAlignment="Top" FontSize="36" Width="649" />
+    </Grid>
+</Window>

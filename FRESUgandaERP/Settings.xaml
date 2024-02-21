@@ -1,0 +1,14 @@
+﻿<Window x:Class="FRESUgandaERP.Settings"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Settings" Height="236" Width="496" Loaded="Window_Loaded">
+    <Grid Height="175" Width="466">
+        <Button Content="Save" Height="23" HorizontalAlignment="Left" Margin="379,140,0,0" Name="btnSubmit" VerticalAlignment="Top" Width="75" Click="btnSubmit_Click" />
+        <Label Content="Server IP Address" Height="28" HorizontalAlignment="Left" Margin="12,12,0,0" Name="label1" VerticalAlignment="Top" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="140,12,0,0" Name="txtServerIP" VerticalAlignment="Top" Width="314" />
+        <Label Content="DB Directory on Server" Height="28" HorizontalAlignment="Left" Margin="12,51,0,0" Name="label2" VerticalAlignment="Top" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="140,51,0,0" Name="txtDirectory" VerticalAlignment="Top" Width="314" />
+        <Label Content="SYSDBA Password" Height="28" HorizontalAlignment="Left" Margin="12,85,0,0" Name="label3" VerticalAlignment="Top" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="140,85,0,0" Name="txtSysDbaPass" VerticalAlignment="Top" Width="314" />
+    </Grid>
+</Window>

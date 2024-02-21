@@ -1,0 +1,18 @@
+﻿<Window x:Class="VUARMS.ChangeResult"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Change Result" Height="204.224" Width="371.209">
+    <Viewbox>
+    <Grid Width="359" Margin="0,0,0,0">
+        <Label Content="Original" Height="28" HorizontalAlignment="Left" Margin="10,60,0,0" Name="label5" VerticalAlignment="Top" />
+        <Label Content="New Result" Height="28" HorizontalAlignment="Left" Margin="10,93,0,0" Name="label6" VerticalAlignment="Top"  />
+        <Button Content="SUBMIT" Height="31" HorizontalAlignment="Left" Margin="231,135,0,0" Name="btnSubmit" VerticalAlignment="Top" Width="75" Click="btnSubmit_Click" />
+        <TextBox Height="30" HorizontalAlignment="Left" Margin="111,56,0,0" Name="txtOriginal" VerticalAlignment="Top" Width="195" />
+        <TextBox Height="30" HorizontalAlignment="Left" Margin="111,91,0,0" Name="txtNewresult" VerticalAlignment="Top" Width="195" />
+        <Button Content="CANCEL" Height="31" HorizontalAlignment="Left" Margin="111,135,0,0" x:Name="btnCancel" VerticalAlignment="Top" Width="75" Click="btnCancel_Click"/>
+        <Label BorderBrush="Black" BorderThickness="1" Height="45" HorizontalAlignment="Left" Margin="10,6,0,0" x:Name="lblDetails" VerticalAlignment="Top" Width="339">
+            <TextBlock Name="txtDetails" TextWrapping="Wrap"  Height="40" Width="330"></TextBlock>
+        </Label>
+    </Grid>
+    </Viewbox>
+</Window>

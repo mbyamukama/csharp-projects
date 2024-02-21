@@ -1,0 +1,6 @@
+1. discounts
+2. long receipts
+3. error on sale window
+4. sale window maximize
+5. receipt numbers (100,000)
+6. item name resizing after sale

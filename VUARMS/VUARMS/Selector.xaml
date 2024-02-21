@@ -1,0 +1,17 @@
+﻿<Window x:Class="VUARMS.Selector"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VUARMS"
+        mc:Ignorable="d"
+        Title="Module Selector" Height="541" Width="840" Loaded="Window_Loaded" >
+    <Viewbox>
+    <Grid Width="819" Margin="0,0,0,0">
+        <DataGrid CanUserDeleteRows="False" AutoGenerateColumns="true"  Height="462" Margin="0,39,0,0" Name="dataGridResults" VerticalAlignment="Top" MouseDoubleClick="dataGridResults_MouseDoubleClick"/>
+        <Label Content="Search" HorizontalAlignment="Left" Margin="6,6,0,0" VerticalAlignment="Top" BorderThickness="1" Height="26"/>
+        <TextBox x:Name="txtSearch" HorizontalAlignment="Left" Height="28" Margin="100,6,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="219" BorderBrush="Black" TextChanged="txtSearch_TextChanged"/>
+            <Button x:Name="btnSelectOK" Content="Select" HorizontalAlignment="Left" Margin="734,10,0,0" VerticalAlignment="Top" Width="75" Height="24" Click="btnSelectOK_Click"/>
+        </Grid>
+    </Viewbox>
+</Window>

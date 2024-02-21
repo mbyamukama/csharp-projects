@@ -1,0 +1,10 @@
+﻿<Window x:Class="StockApp.DocViewer"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Document Viewer" Height="600" Width="850" Loaded="Window_Loaded">
+    <Viewbox>
+    <Grid>
+        <DocumentViewer Height="550" HorizontalAlignment="Left" Margin="12,12,0,0" Name="documentViewer1" VerticalAlignment="Top" Width="800" />
+    </Grid>
+    </Viewbox>
+</Window>

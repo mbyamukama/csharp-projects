@@ -1,0 +1,48 @@
+﻿<Window x:Class="StockApp.SaleWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Sales" Height="587" Width="714" Loaded="Window_Loaded" KeyDown="Window_KeyDown" Closing="Window_Closing">
+    <Viewbox Margin="5,5,5,5">
+        <Grid Width="692" Margin="0,0,0,0">
+            <Menu Margin="0,1,10,485.6">
+                <MenuItem Header="File" Name="fileMenu" FontSize="14">
+                    <MenuItem Header="View Sales" Name="viewSalesMenu" Click="viewSalesMenu_Click">
+                        <MenuItem.Icon>
+                            <Image Height="20" Width="20" Source="Resources/view.png" HorizontalAlignment="Left"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="Cross Check Sales" Name="chkSalesMenu" Click="chkSalesMenu_Click">
+                        <MenuItem.Icon>
+                            <Image Height="30" Width="30" Source="Resources/checklist.png" HorizontalAlignment="Left"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="Exit" Name="exitMenu" Click="exitMenu_Click">
+                        <MenuItem.Icon>
+                            <Image Height="20" Width="20" Source="Resources/exit.png" HorizontalAlignment="Left"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                </MenuItem>
+            </Menu>
+            <GroupBox Margin="0,28,0,-19.8" Header="Add Sale">
+                <Grid Margin="0,0,0,0">
+                    <Label Content="Item Name" Height="30" HorizontalAlignment="Left" Margin="10,50,0,0" Name="label2" VerticalAlignment="Top" />
+                    <Label Content="Amount Due" Height="28" HorizontalAlignment="Left" Margin="11,343,0,0" Name="label6" VerticalAlignment="Top" />
+                    <Label Content="0" Height="37" HorizontalAlignment="Left" Margin="123,334,0,0" Name="lblAmountDue" VerticalAlignment="Top" FontSize="20" Width="162" VerticalContentAlignment="Center" />
+                    <TextBox Height="35" HorizontalAlignment="Right" Margin="0,384,394,0" Name="txtAmtPaid" VerticalAlignment="Top" Width="162" TextChanged="txtAmtPaid_TextChanged" FontSize="20" KeyDown="txtAmtPaid_KeyDown" BorderThickness="1" BorderBrush="Black"/>
+                    <Label Content="Amount Paid" Height="28" HorizontalAlignment="Left" Margin="10,391,0,0" Name="label4" VerticalAlignment="Top" />
+                    <Label Content="Change" Height="28" HorizontalAlignment="Left" Margin="390,391,0,0" Name="label7" VerticalAlignment="Top" />
+                    <Label Content="0" Height="35" HorizontalAlignment="Left" Margin="503,384,0,0" Name="lblBalance" VerticalAlignment="Top" FontSize="20" Width="162" BorderThickness="1" BorderBrush="Black"/>
+                    <DataGrid AutoGenerateColumns="True" Height="246" Margin="10,88,14,0" Name="dtGridItemsBought" VerticalAlignment="Top"  FontSize="25" AutoGeneratingColumn="dtGridItemsBought_AutoGeneratingColumn">
+                    </DataGrid>
+                    <TextBox HorizontalAlignment="Left" KeyDown="txtItemName_KeyDown" Name="txtItemName" FontSize="20" Height="35" Margin="97,48,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="542" ToolTip=""/>
+                    <TextBlock TextWrapping="WrapWithOverflow" FontFamily="Segoe UI Semibold" FontSize="11.5" Text="F1 = Search by name.  F2 = New Sale Window. F3 = Scan a Customer Card.  F4 = Refresh stock.  F6=Card Payments 
+                     F7=Redeem Points" HorizontalAlignment="Left" Margin="17,10,0,0" VerticalAlignment="Top" Width="628" Height="33"/>
+                    <TextBox Height="35" HorizontalAlignment="Right" Margin="0,342,14,0" IsEnabled="False" Text="Press F5 to enable" Name="txtDiscount"  VerticalAlignment="Top" Width="162" FontSize="19" TextChanged="txtDiscount_TextChanged" BorderThickness="1" BorderBrush="Black"/>
+                    <Label Content="Discount" Height="28"  HorizontalAlignment="Left" Margin="385,346,0,0" Name="lblDiscount"  VerticalAlignment="Top" />
+                    <TextBox Text="0" Height="35" IsReadOnly="True" HorizontalAlignment="Right" Margin="0,426,394.2,-35" x:Name="txtAmtRedeemed" VerticalAlignment="Top" Width="162"  FontSize="20" BorderThickness="1" BorderBrush="Black"/>
+                    <Label Content="Amount Redeemed" Height="28" HorizontalAlignment="Left" Margin="9,433,0,-35" x:Name="label4_Copy" VerticalAlignment="Top" />
+                </Grid>
+            </GroupBox>
+        </Grid>
+    </Viewbox>
+</Window>

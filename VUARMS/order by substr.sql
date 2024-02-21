@@ -1,0 +1,1 @@
+select r.*  from COURSES r where r.DEPT='FST' order by substring(r.COURSECODE from 4) asc

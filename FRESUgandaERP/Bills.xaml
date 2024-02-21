@@ -1,0 +1,27 @@
+﻿<Window x:Class="FRESUgandaERP.Bills"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Bills" Height="597.212" Width="1032.195" Loaded="Window_Loaded">
+    <Viewbox Margin="0,0,0,0">
+        <Grid Margin="5,5,5,5" Height="479">
+            <Menu HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" Height="30" Width="892">
+                <MenuItem Header="File">
+                    <MenuItem Header="Generate Bills" Name="menuGenerateBills" Click="menuGenerateBills_Click"/>
+                    <!--- <MenuItem Header="Delete Bills" Name="menuDeleteBills" Click="menuDeleteBills_Click"/> -->
+                    <MenuItem Header="Export" Name="menuExport" Click="menuExport_Click"/>
+                    <MenuItem Header="Exit" Name="menuExit" Click="menuExit_Click"/>
+                </MenuItem>
+                <MenuItem Header="View">
+                    <MenuItem Header="Ageing" Name="menuViewAgeing" Click="menuViewAgeing_Click"/>
+                    <MenuItem Header="Bills Due" Name="menuBillsDue" Click="menuBillsDue_Click"/>
+                    <MenuItem Header="Raw Data" Name="menuRawData" Click="menuRawData_Click"/>
+                </MenuItem>
+            </Menu>
+            <DataGrid AutoGenerateColumns="True" Height="357" HorizontalAlignment="Left" Margin="12,77,0,0" Name="dtGridBillsDue" VerticalAlignment="Top" Width="890" AutoGeneratingColumn="dtGridBillsDue_AutoGeneratingColumn" BorderBrush="Black" />
+            <Button Content="View Selected" Height="30" HorizontalAlignment="Left" Margin="808,439,0,0" Name="btnPrintAll" VerticalAlignment="Top" Width="94" Click="btnPrintAll_Click"/>
+            <Label Content="Label" Height="28" HorizontalAlignment="Left" Margin="12,439,0,0" Name="lblCount" VerticalAlignment="Top" />
+            <TextBox Height="28" HorizontalAlignment="Right" Margin="0,37,553,0" x:Name="txtSearch" VerticalAlignment="Top" Width="247" BorderBrush="#E6030303" TextChanged="txtSearch_TextChanged"/>
+            <Label Content="Search" Height="28" HorizontalAlignment="Left" Margin="12,35,0,0" x:Name="label1" VerticalAlignment="Top"/>
+        </Grid>
+    </Viewbox>
+</Window>

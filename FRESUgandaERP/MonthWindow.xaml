@@ -1,0 +1,25 @@
+﻿<Window x:Class="FRESUgandaERP.MonthWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="SELECT MONTH" Height="221" Width="354">
+    <Viewbox>
+        <Grid Margin="5,5,5,5">
+            <ComboBox Name="cbxMonth" FontSize="25" HorizontalAlignment="Left" Margin="0,51,0,0" Height="52" VerticalAlignment="Top" Width="301" SelectedIndex="0">
+                <ComboBoxItem Content="January"/>
+                <ComboBoxItem Content="February"/>
+                <ComboBoxItem Content="March"/>
+                <ComboBoxItem Content="April"/>
+                <ComboBoxItem Content="May"/>
+                <ComboBoxItem Content="June"/>
+                <ComboBoxItem Content="July"/>
+                <ComboBoxItem Content="August"/>
+                <ComboBoxItem Content="September"/>
+                <ComboBoxItem Content="october"/>
+                <ComboBoxItem Content="November"/>
+                <ComboBoxItem Content="December"/>
+            </ComboBox>
+            <Button Content="OK" Name="btnOK" HorizontalAlignment="Left" Margin="226,148,0,0" VerticalAlignment="Top" Width="75" Height="33" Click="btnOK_Click"/>
+            <Button Content="Cancel" Name="btnCancel" HorizontalAlignment="Left" Margin="0,148,0,0" VerticalAlignment="Top" Width="75" Height="33" Click="btnCancel_Click"/>
+        </Grid>
+    </Viewbox>
+</Window>

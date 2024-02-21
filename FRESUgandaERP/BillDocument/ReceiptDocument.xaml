@@ -1,0 +1,26 @@
+﻿<UserControl x:Class="FRESUGERP.AppUtilities.ReceiptDocument"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d" d:DesignWidth="338" Height="443.866">
+    <Grid Width="321" Margin="8,24,8,8">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="342*"/>
+            <RowDefinition Height="55*"/>
+        </Grid.RowDefinitions>
+        <Label Content="CLIENT ID" Height="28" HorizontalAlignment="Left" Margin="12,152,0,0" Name="lblClientId" VerticalAlignment="Top" Width="300" BorderBrush="Black" BorderThickness="1" />
+        <Image Height="122" HorizontalAlignment="Left" Margin="12,1,0,0" Name="image1" Stretch="Fill" VerticalAlignment="Top" Width="300" Source="/FRESUGERP.AppUtilities;component/freslogo.png" />
+        <Label BorderBrush="Black" BorderThickness="1" Content="CLIENT NAME:" Height="28" HorizontalAlignment="Left" Margin="12,179,0,0" Name="lblClientName" VerticalAlignment="Top" Width="300" />
+        <Label BorderBrush="Black" BorderThickness="1" Content="AMT PAID:" Height="28" HorizontalAlignment="Left" Margin="12,206,0,0" Name="lblAmtPaid" VerticalAlignment="Top" Width="300"/>
+        <Label BorderBrush="Black" BorderThickness="1" Content="PAY DATE:" Height="28" HorizontalAlignment="Left" Margin="12,233,0,0" Name="lblPayDate" VerticalAlignment="Top" Width="300"/>
+        <Label BorderBrush="Black" BorderThickness="1" Content="PAYMENT FOR :" Height="28" HorizontalAlignment="Left" Margin="12,260,0,0" Name="lblPayFor" VerticalAlignment="Top" Width="300"/>
+        <Label BorderBrush="Black" BorderThickness="1" Content="BALANCE:" Height="28" HorizontalAlignment="Left" Margin="12,287,0,0" Name="lblServFeeBal" VerticalAlignment="Top" Width="300" />
+        <Label Margin="12,16,9,0" BorderBrush="CornflowerBlue" BorderThickness="1" Grid.Row="1">
+            <TextBlock TextWrapping="Wrap" FontSize="11" Width="285" Text="FRES Uganda, Plot 35 Lower Circular Road Booma Mbarara. Tel 0485-420141" Height="35" FontStyle="Italic"></TextBlock>
+        </Label>
+        <Label BorderBrush="Black" BorderThickness="1" Content="RECEIPT NO:" Height="28" HorizontalAlignment="Left" Margin="12,125,0,0" Name="lblrecNo" VerticalAlignment="Top" Width="300" />
+        <Label BorderBrush="Black" BorderThickness="1" Content="PAID BY:" Height="28" HorizontalAlignment="Left" Margin="12,314,0,0" Name="lblPaidBy" VerticalAlignment="Top" Width="300" />
+        <Label BorderBrush="Black" BorderThickness="1" Content="PAY TYPE:" Height="28" HorizontalAlignment="Left" Margin="12,341,0,0" Name="lblPayType" VerticalAlignment="Top" Width="300" Grid.RowSpan="2" />
+    </Grid>
+</UserControl>

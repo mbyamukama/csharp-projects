@@ -1,0 +1,20 @@
+﻿<Window x:Class="GroupMarkAssigner.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="579.327" Width="829.502" Loaded="Window_Loaded">
+    <Viewbox>
+        <Grid Width="600" Height="378">
+            <DataGrid AutoGenerateColumns="true" FontSize="10" FontFamily="Arial" Height="249" HorizontalAlignment="Left" Margin="12,86,0,0" Name="dtGridResults" VerticalAlignment="Top" Width="578" />
+            <TextBox Height="34" HorizontalAlignment="Left" Margin="109,46,0,0" Name="txtFilter" VerticalAlignment="Top" Width="481" TextChanged="txtFilter_TextChanged" />
+            <Label Content="Label" Height="28" HorizontalAlignment="Left" Margin="12,52,0,0" Name="Filter" VerticalAlignment="Top" />
+            <TextBox Height="23" HorizontalAlignment="Left" Margin="434,343,0,0" Name="txtMark" VerticalAlignment="Top" Width="46" IsEnabled="False" />
+            <Button Content="Submit" Height="23" HorizontalAlignment="Left" Margin="515,342,0,0" Name="btnSubmit" VerticalAlignment="Top" Width="75" Click="btnSubmit_Click" />
+            <Label Content="Label" Height="28" HorizontalAlignment="Left" Margin="12,341,0,0" Name="label1" VerticalAlignment="Top" />
+            <ComboBox Height="23" HorizontalAlignment="Left" Margin="109,12,0,0" Name="cbxModule" VerticalAlignment="Top" Width="120" SelectionChanged="cbxModule_SelectionChanged">
+                
+            </ComboBox>
+            <Label Content="MODULE" Height="28" HorizontalAlignment="Left" Margin="10,10,0,0" Name="MODULE" VerticalAlignment="Top" />
+            <Button Content="Export" Height="23" HorizontalAlignment="Left" Margin="513,10,0,0" Name="btnExport" VerticalAlignment="Top" Width="75" Click="btnExport_Click" />
+        </Grid>
+    </Viewbox>
+</Window>

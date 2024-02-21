@@ -1,0 +1,57 @@
+﻿<Window x:Class="JMHotel.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="JM Hotel Manager" Height="335" Width="708" Loaded="Window_Loaded" Closing="Window_Closing">
+    <Viewbox>
+        <Grid Margin="0,0,0,0" Height="299" VerticalAlignment="Top">
+            <Button  Height="127" Width="127" HorizontalAlignment="Left" Margin="13,10,0,0" Name="btnVisits" VerticalAlignment="Top"  Click="btnVisits_Click">
+                <StackPanel Height="111" Width="111">
+                    <Image Source="Resources/visit.png" Height="94" Margin="6,0,10,0"/>
+                    <TextBlock HorizontalAlignment="Left" FontSize="14" Height="16" Width="43" FontFamily="Segoe UI"  Margin="31,0,0,0"><Run Text="visitors"/></TextBlock>
+                </StackPanel>
+            </Button>
+            <Button  Height="127" Width="127" HorizontalAlignment="Left" Margin="365,10,0,0" Name="btnItems" VerticalAlignment="Top" Click="btnItems_Click">
+                <StackPanel Height="111" Width="111">
+                    <Image Source="Resources/list.png" Height="94" Margin="6,0,10,0"/>
+                    <TextBlock HorizontalAlignment="Left" FontSize="14" Height="16" Width="43" FontFamily="Segoe UI"  Margin="40,0,0,0"><Run Text="sales"/></TextBlock>
+                </StackPanel>
+            </Button>
+            <Button  Height="127" Width="127" HorizontalAlignment="Left" Margin="191,10,0,0" x:Name="btnReserve" VerticalAlignment="Top"  Click="btnReservations_Click">
+                <StackPanel Height="111" Width="111">
+                    <Image Source="Resources/reserved.png" Height="94" Margin="6,0,10,0"/>
+                    <TextBlock HorizontalAlignment="Left" FontSize="14" Height="16" Width="82" FontFamily="Segoe UI"  Margin="19,0,0,0"><Run Text="reservations"/></TextBlock>
+                </StackPanel>
+            </Button>
+            <Button  Height="127" Width="127" HorizontalAlignment="Left" Margin="13,158,0,0" x:Name="btnUsers" VerticalAlignment="Top"  Click="btnUsers_Click">
+                <StackPanel Height="111" Width="111">
+                    <Image Source="Resources/admin.png" Height="94" Margin="6,0,10,0"/>
+                    <TextBlock HorizontalAlignment="Left" FontSize="14" Height="16" Width="43" FontFamily="Segoe UI"  Margin="40,0,0,0"><Run Text="users"/></TextBlock>
+                </StackPanel>
+            </Button>
+            <Button  Height="127" Width="127" HorizontalAlignment="Left" Margin="191,158,0,0" Name="btnSuppliers" VerticalAlignment="Top" Click="btnSuppliers_Click">
+                <StackPanel Height="111" Width="111">
+                    <Image Source="Resources/suppliers.png" Height="91" Margin="6,0,10,0"/>
+                    <TextBlock HorizontalAlignment="Left" FontSize="14" Height="19" Width="66" FontFamily="Segoe UI"  Margin="28,0,0,0"><Run Text="suppliers"/></TextBlock>
+                </StackPanel>
+            </Button>
+            <Button  Height="127" Width="127" HorizontalAlignment="Left" Margin="543,158,0,0" Name="btnRawData" VerticalAlignment="Top"  Click="btnRawData_Click">
+                <StackPanel Height="111" Width="111">
+                    <Image Source="Resources/invoice.png" Height="94" Margin="6,0,10,0"/>
+                    <TextBlock HorizontalAlignment="Left" FontSize="14" Height="16" Width="61" FontFamily="Segoe UI"  Margin="26,0,0,0"><Run Text="raw data"/></TextBlock>
+                </StackPanel>
+            </Button>
+            <Button  Height="127" Width="127" HorizontalAlignment="Left" Margin="543,10,0,0" x:Name="btnDelieveries" VerticalAlignment="Top" Click="btnDelieveries_Click">
+                <StackPanel Height="111" Width="111">
+                    <Image Source="Resources/deliveries.png" Height="94" Margin="6,0,10,0"/>
+                    <TextBlock HorizontalAlignment="Left" FontSize="14" Height="19" Width="66" FontFamily="Segoe UI"  Margin="28,0,0,0"><Run Text="purchases"/></TextBlock>
+                </StackPanel>
+            </Button>
+            <Button  Height="127" Width="127" HorizontalAlignment="Left" Margin="365,158,0,0" x:Name="btnReports" VerticalAlignment="Top" Click="btnReports_Click">
+                <StackPanel Height="111" Width="111">
+                    <Image Source="Resources/chart.png" Height="91" Margin="6,0,10,0"/>
+                    <TextBlock HorizontalAlignment="Left" FontSize="14" Height="19" Width="53" FontFamily="Segoe UI"  Margin="30,0,0,0"><Run Text="reports"/></TextBlock>
+                </StackPanel>
+            </Button>
+        </Grid>
+    </Viewbox>
+</Window>

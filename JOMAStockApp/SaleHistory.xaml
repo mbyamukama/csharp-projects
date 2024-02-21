@@ -1,0 +1,21 @@
+﻿<Window x:Class="StockApp.SaleHistory"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="" Height="541.3" Width="840" Loaded="Window_Loaded"
+        xml:lang="en-GB">
+    <Viewbox>
+        <Grid Width="819" Margin="0,40,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <DataGrid CanUserDeleteRows="False" FontFamily="Segoe UI" AutoGenerateColumns="true" AutoGeneratingColumn="dataGridResults_AutoGeneratingColumn"  Height="393" Margin="0,10,18.2,0" Name="dataGridResults" VerticalAlignment="Top"/>
+            <Label Content="Count = 0" Height="28" HorizontalAlignment="Left" Margin="6,409,0,-0.2" Name="lblCount" VerticalAlignment="Top" Width="700" />
+            <Label Content="" Name="lblSearch" FontSize="10" HorizontalAlignment="Left" Margin="6,-40,0,0" VerticalAlignment="Top" BorderThickness="1" Height="26" Width="327"/>
+            <DatePicker Height="25" HorizontalAlignment="Right" Margin="0,-38,95.2,0" x:Name="todtPicker" VerticalAlignment="Top" Width="115"/>
+            <DatePicker Height="25" HorizontalAlignment="Left" Margin="402,-38,0,0" x:Name="fromdtPicker" VerticalAlignment="Top" Width="115"/>
+            <Label Content="From " Height="28" HorizontalAlignment="Left" Margin="338,-38,0,0" x:Name="label1" VerticalAlignment="Top" />
+            <Label Content="to" Height="28" HorizontalAlignment="Left" Margin="556,-39,0,0" x:Name="label2" VerticalAlignment="Top" />
+            <Button x:Name="btnGo" Content="Go" HorizontalAlignment="Left" Margin="750,-38,0,0" VerticalAlignment="Top" Width="51" Height="25" Click="btnGo_Click"/>
+        </Grid>
+    </Viewbox>
+</Window>

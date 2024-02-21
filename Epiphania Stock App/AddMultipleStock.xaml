@@ -1,0 +1,23 @@
+﻿<Window x:Class="StockApp.AddMultipleStock"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Add Stock" Height="427" Width="1003" Loaded="Window_Loaded" Closing="Window_Closing">
+    <Viewbox>
+    <Grid Height="383" Margin="22,7,2,7">
+        <DataGrid AutoGenerateColumns="true" Height="319" HorizontalAlignment="Left" Name="dtGridAddSock" VerticalAlignment="Top" Width="960" IsReadOnly="False" FontSize="11"/>
+        <Label Content="Count = 0" Height="28" HorizontalAlignment="Left" Margin="4,326,0,0" Name="lblCount" VerticalAlignment="Top" Width="90" />
+        <Button Height="43" HorizontalAlignment="Left" Margin="593,330,0,0" Name="btnAddNew" VerticalAlignment="Top" Width="72" Click="btnAddNew_Click">
+            <StackPanel>
+                <Image Source="/StockApp;component/Resources/plus.png" Height="18" Width="24" ></Image>
+                <TextBlock>Add New</TextBlock>
+            </StackPanel>
+        </Button>
+        <Button Height="43" HorizontalAlignment="Left" Margin="892,326,0,0" Name="btnSubmit" VerticalAlignment="Top" Width="68" Click="btnSubmit_Click">
+            <StackPanel>
+                <Image Height="20" Source="/StockApp;component/Resources/tick.png" Width="49" />
+                <TextBlock Height="13" Width="40">Submit</TextBlock>
+            </StackPanel>
+        </Button>
+    </Grid>
+    </Viewbox>
+</Window>

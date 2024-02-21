@@ -1,0 +1,14 @@
+﻿<Window x:Class="StockApp.AlterQuantity"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Alter Quantity" Height="226" Width="386" Loaded="Window_Loaded">
+    <Grid Margin="0,0,0,0">
+        <Label Content="Current Quantity" HorizontalAlignment="Left" Margin="10,23,0,0" VerticalAlignment="Top" Height="38" Width="130" FontSize="16" FontFamily="Tahoma"/>
+        <Label Content="Amount to Add" HorizontalAlignment="Left" Margin="10,80,0,0" VerticalAlignment="Top" Height="38" Width="121" FontSize="16" FontFamily="Tahoma"/>
+        <Label Content="New Qty" HorizontalAlignment="Left" Margin="10,140,0,0" VerticalAlignment="Top" Height="38" Width="104" FontSize="16" FontFamily="Tahoma"/>
+        <Label Name="lblCurrQty" Content="0" HorizontalAlignment="Left" Margin="147,23,0,0" VerticalAlignment="Top" Height="38" Width="130" FontSize="16" FontFamily="Tahoma"/>
+        <Label x:Name="lblNewQty" Content="0" HorizontalAlignment="Left" Margin="148,140,0,0" VerticalAlignment="Top" Height="38" Width="130" FontSize="16" FontFamily="Tahoma"/>
+        <TextBox  Name="txtAmountAdd" HorizontalAlignment="Left" FontFamily="Tahoma" Height="38" Margin="147,80,0,0" TextWrapping="Wrap" Text="0" FontSize="16" VerticalAlignment="Top" Width="120" KeyDown="txtAmountAdd_KeyDown" TextChanged="txtAmountAdd_TextChanged"/>
+
+    </Grid>
+</Window>
