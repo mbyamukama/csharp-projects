@@ -1,0 +1,14 @@
+﻿<Window x:Class="HCOTIS.FlavorSelect"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HCOTIS"
+        mc:Ignorable="d"
+        Title="Select Flavor" Height="300" Width="226.218" Loaded="Window_Loaded">
+    <Viewbox>
+    <Grid>
+            <DataGrid x:Name="dataGridFlavor" MouseDoubleClick="dataGridFlavor_MouseDoubleClick" HorizontalAlignment="Left" Margin="10,10,10,10" VerticalAlignment="Top" Height="250" Width="201" />
+        </Grid>
+    </Viewbox>
+</Window>

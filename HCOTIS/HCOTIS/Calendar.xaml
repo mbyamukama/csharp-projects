@@ -1,0 +1,10 @@
+﻿<Window x:Class="HCOTIS.Calendar"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Upcoming Events" Height="541.3" Width="840" Loaded="Window_Loaded"
+        xml:lang="en-GB">
+    <Grid Width="819" Margin="6,10,6,0">
+        <DataGrid CanUserDeleteRows="False" FontFamily="Segoe UI" AutoGenerateColumns="true" AutoGeneratingColumn="dataGridCalendar_AutoGeneratingColumn"  Height="482" Margin="0,10,18,0" Name="dataGridCalendar" VerticalAlignment="Top">
+        </DataGrid>
+    </Grid>
+</Window>

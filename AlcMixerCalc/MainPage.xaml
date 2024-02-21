@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AlcMixerCalc.MainPage">
+
+  <StackLayout Orientation="Vertical">
+    <Border Stroke="#C49B33"
+        StrokeThickness="4"
+        StrokeShape="RoundRectangle 40,0,0,40"
+        Padding="16,8"
+        HorizontalOptions="Center">
+      <StackLayout Orientation="Horizontal">
+        <StackLayout Grid.Column="0"   VerticalOptions="Start" HeightRequest="60">
+          <Label  Text="Base Volume" VerticalOptions="CenterAndExpand"></Label>
+        </StackLayout>
+        <StackLayout Grid.Column="1"  Orientation="Horizontal"  HorizontalOptions="FillAndExpand" VerticalOptions="Start"  HeightRequest="60" >
+          <Border Stroke="#C49B33"
+        StrokeThickness="4">
+            <Entry x:Name="entryBaseVol" PlaceholderColor="#C7C7C7" HorizontalOptions="End" WidthRequest="100" VerticalOptions="Center" FontSize="18"  TextColor="#C7C7C7" TextChanged="entryBaseVol_TextChanged" />
+          </Border>
+        </StackLayout>
+      </StackLayout>
+    </Border>
+    <Border Stroke="#C49B33"
+        StrokeThickness="4"
+        StrokeShape="RoundRectangle 40,0,0,40"
+        Padding="16,8"
+        HorizontalOptions="Center">
+      <StackLayout Orientation="Horizontal">
+        <StackLayout Grid.Column="0"   VerticalOptions="Start" HeightRequest="60">
+          <Label  Text="Base %age" VerticalOptions="CenterAndExpand"></Label>
+        </StackLayout>
+
+        <StackLayout Grid.Column="1"  Orientation="Horizontal"  HorizontalOptions="FillAndExpand" VerticalOptions="Start"  HeightRequest="60" >
+          <Border Stroke="#C49B33"
+        StrokeThickness="4">
+            <Entry x:Name="entryBaseConc" PlaceholderColor="#C7C7C7" HorizontalOptions="End" WidthRequest="100" VerticalOptions="Center" FontSize="18"  TextColor="#C7C7C7" TextChanged="entryBaseConc_TextChanged" />
+          </Border>
+        </StackLayout>
+      </StackLayout>
+    </Border>
+    <Border Stroke="#C49B33"
+        StrokeThickness="4"
+        StrokeShape="RoundRectangle 40,0,0,40"
+        Padding="16,8"
+        HorizontalOptions="Center">
+      <StackLayout Orientation="Horizontal">
+        <StackLayout Grid.Column="0"   VerticalOptions="Start" HeightRequest="60">
+          <Label  Text="Mixer Volume" VerticalOptions="CenterAndExpand"></Label>
+        </StackLayout>
+
+        <StackLayout Grid.Column="1"  Orientation="Horizontal"  HorizontalOptions="FillAndExpand" VerticalOptions="Start"  HeightRequest="60" >
+          <Border Stroke="#C49B33"
+        StrokeThickness="4">
+            <Entry x:Name="entryMixerVol"  PlaceholderColor="#C7C7C7" HorizontalOptions="End" WidthRequest="100" VerticalOptions="Center" FontSize="18"  TextColor="#C7C7C7" TextChanged="entryMixerVol_TextChanged" />
+          </Border>
+        </StackLayout>
+      </StackLayout>
+    </Border>
+    <Border Stroke="#C49B33"
+        StrokeThickness="4"
+        StrokeShape="RoundRectangle 40,0,0,40"
+        Padding="16,8"
+        HorizontalOptions="Center">
+      <StackLayout Orientation="Horizontal">
+        <StackLayout Grid.Column="0"   VerticalOptions="Start" HeightRequest="60">
+          <Label  Text="Mixer %age" VerticalOptions="CenterAndExpand"></Label>
+        </StackLayout>
+
+        <StackLayout Grid.Column="1"  Orientation="Horizontal"  HorizontalOptions="FillAndExpand" VerticalOptions="Start"  HeightRequest="60" >
+          <Border Stroke="#C49B33"
+        StrokeThickness="4">
+            <Entry x:Name="entryMixerConc"  PlaceholderColor="#C7C7C7" HorizontalOptions="End" WidthRequest="100" VerticalOptions="Center" FontSize="18"  TextColor="#C7C7C7" TextChanged="entryMixerConc_TextChanged" />
+          </Border>
+        </StackLayout>
+      </StackLayout>
+    </Border>
+
+    <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+      <StackLayout Grid.Column="0"   VerticalOptions="Center" HeightRequest="60">
+          <Label x:Name="txtfinalConc"  Text="0" HorizontalOptions="Center" VerticalOptions="Center"></Label>
+        </StackLayout>
+    </StackLayout>
+  </StackLayout>
+
+</ContentPage>

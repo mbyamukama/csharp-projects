@@ -1,0 +1,39 @@
+﻿<Window x:Class="HCOTIS.Orders"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Add and View Orders" Height="541.3" Width="840" Loaded="Window_Loaded"
+        xml:lang="en-GB">
+    <Viewbox>
+        <Grid Width="819" Margin="0,40,0,0">
+            <DataGrid CanUserDeleteRows="False" FontFamily="Segoe UI" FontSize="10" AutoGenerateColumns="true"  AutoGeneratingColumn="dataGridResults_AutoGeneratingColumn"  Height="353" Margin="0,56,18,0" Name="dataGridResults" VerticalAlignment="Top">
+                <DataGrid.ContextMenu>
+                    <ContextMenu Name="contextMenu">
+                        <MenuItem Name="menuMakePayment" Header="Make Payment" Click="menuMakePayment_Click"></MenuItem>
+                        <MenuItem Name="menuViewPayments" Header="View Payments" Click="menuViewPayments_Click"></MenuItem>
+                        <MenuItem Name="menuViewCake" Header="View Cake" Click="menuViewCake_Click"></MenuItem>
+                        <MenuItem Name="menuDelete" Header="Delete" Click="menuDelete_Click"></MenuItem>
+                       
+                    </ContextMenu>
+                </DataGrid.ContextMenu>
+            </DataGrid>
+            <Label Content="Count = 0" Height="28" HorizontalAlignment="Left" Margin="6,409,0,0" Name="lblCount" VerticalAlignment="Top" Width="700" />
+            <Button  Height="28" HorizontalAlignment="Left" Margin="726,420,0,0" Name="btnUpdate" VerticalAlignment="Top" Width="75" Content="Update" Click="btnUpdate_Click">
+            </Button>
+            <Label Content="Search" HorizontalAlignment="Left" Margin="6,6,0,0" VerticalAlignment="Top" BorderThickness="1" Height="26"/>
+            <TextBox x:Name="txtSearch" HorizontalAlignment="Left" Height="28" Margin="100,6,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="219" BorderBrush="Black" TextChanged="txtSearch_TextChanged"/>
+            <DatePicker Height="25" HorizontalAlignment="Right" Margin="0,8,96,0" x:Name="todtPicker" VerticalAlignment="Top" Width="115"/>
+            <DatePicker Height="25" HorizontalAlignment="Left" Margin="402,8,0,0" x:Name="fromdtPicker" VerticalAlignment="Top" Width="115"/>
+            <Label Content="From " Height="28" HorizontalAlignment="Left" Margin="338,8,0,0" x:Name="label1" VerticalAlignment="Top" />
+            <Label Content="to" Height="28" HorizontalAlignment="Left" Margin="556,7,0,0" x:Name="label2" VerticalAlignment="Top" />
+            <Button x:Name="btnGo" Content="Go" HorizontalAlignment="Left" Margin="750,8,0,0" VerticalAlignment="Top" Width="51" Height="25" Click="btnGo_Click"/>
+            <Menu HorizontalAlignment="Left" Height="30" Margin="0,-40,0,0" VerticalAlignment="Top" Width="801">
+                <MenuItem Header="File">
+                    <MenuItem Header="Add New" Name="menuAddNew" Click="menuAddNew_Click"></MenuItem>
+                    <MenuItem Header="Print">
+                    </MenuItem>
+                    <MenuItem Header="Exit" Name="exitMenu" Click="exitMenu_Click"></MenuItem>
+                </MenuItem>
+            </Menu>
+        </Grid>
+    </Viewbox>
+</Window>

@@ -1,0 +1,45 @@
+﻿<Window x:Class="HCOTIS.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Heavenly Cakes Order Tracking Information System" Height="437" Width="708" Loaded="Window_Loaded" Closed="Window_Closed">
+    <Viewbox>
+    <Grid Margin="5,5,5,5">
+        <Button  Height="160" Width="174" HorizontalAlignment="Left" Margin="23,25,0,0" Name="btnOrders" VerticalAlignment="Top"  Click="btnOrders_Click">
+            <StackPanel Height="150" Width="165">
+                <Image Source="icons/order.png" Height="126" Margin="6,0,10,0"/>
+                <TextBlock HorizontalAlignment="Center" FontSize="14" Height="16" Width="68" FontFamily="Segoe UI"  Margin="22,0,0,0">Order</TextBlock>
+            </StackPanel>
+        </Button>
+        <Button Height="160" Width="174" HorizontalAlignment="Left" Margin="260,25,0,0" Name="btnPayments" VerticalAlignment="Top" Click="btnPayments_Click">
+            <StackPanel Height="150" Width="165">
+                <Image Source="icons/payments.png" Height="126" Margin="6,0,10,0"/>
+                    <TextBlock HorizontalAlignment="Center" FontSize="14" Height="16" Width="68" FontFamily="Segoe UI"  Margin="22,0,0,0">Payments</TextBlock>
+            </StackPanel>
+        </Button>
+        <Button Height="160" HorizontalAlignment="Left" Margin="260,237,0,0" Name="btnCalendar" VerticalAlignment="Top" Width="174" Click="btnCalendar_Click">
+            <StackPanel Height="150" Width="165">
+                <Image Source="icons/calendar.png" Height="126" Margin="6,0,10,0"/>
+                    <TextBlock HorizontalAlignment="Center" FontSize="14" Height="16" Width="68" FontFamily="Segoe UI"  Margin="22,0,0,0" Text="Calendar"/>
+                </StackPanel>
+        </Button>
+        <Button  Height="160" HorizontalAlignment="Left" Margin="500,237,0,0" Name="btnExit" VerticalAlignment="Top" Width="174" Click="btnExit_Click">
+            <StackPanel Height="150" Width="165">
+                <Image Source="icons/exit.png" Height="126" Margin="6,0,10,0"/>
+                <TextBlock HorizontalAlignment="Center" FontSize="14" Height="16" Width="68" FontFamily="Segoe UI"  Margin="22,0,0,0">Exit</TextBlock>
+            </StackPanel>
+        </Button>
+        <Button Height="160" HorizontalAlignment="Left" Margin="500,25,0,0" Name="btnReports" VerticalAlignment="Top" Width="174" Click="btnReports_Click">
+            <StackPanel Height="150" Width="165">
+                <Image Source="icons/reports.png" Height="126" Margin="6,0,10,0"/>
+                    <TextBlock HorizontalAlignment="Center" FontSize="14" Height="16" Width="68" FontFamily="Segoe UI"  Margin="22,0,0,0">Reports</TextBlock>
+            </StackPanel>
+        </Button>
+        <Button Height="160" HorizontalAlignment="Left" Margin="23,237,0,0" Name="btnAdmin" VerticalAlignment="Top" Width="174" Click="btnUsers_Click" >
+            <StackPanel Height="150" Width="165">
+                <Image Source="icons/users.png" Height="126" Margin="6,0,10,0"/>
+                    <TextBlock HorizontalAlignment="Center" FontSize="14" Height="16" Width="68" FontFamily="Segoe UI"  Margin="22,0,0,0">Users</TextBlock>
+            </StackPanel>
+        </Button>
+    </Grid>
+    </Viewbox>
+</Window>

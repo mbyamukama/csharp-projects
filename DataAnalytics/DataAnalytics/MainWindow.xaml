@@ -1,0 +1,18 @@
+﻿<Window x:Class="DataAnalytics.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DataAnalytics"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="474.291" Width="759.574" Loaded="Window_Loaded">
+    <Grid Margin="0,0,0,0" Height="519" VerticalAlignment="Top">
+        <DataGrid AutoGenerateColumns="True" Height="357" HorizontalAlignment="Left" Margin="12,77,0,0" Name="dtGridResults" VerticalAlignment="Top" Width="730"  BorderBrush="Black" />
+        
+        <ComboBox HorizontalAlignment="Left" Margin="75,10,0,0" VerticalAlignment="Top" Width="140" Name="cbxCol1" />
+        <Label Content="Column1" Height="28" HorizontalAlignment="Left" Margin="12,6,0,0" x:Name="label1_Copy" VerticalAlignment="Top"/>
+        <ComboBox HorizontalAlignment="Left" Margin="391,10,0,0" VerticalAlignment="Top" Width="140" x:Name="cbxCol2" />
+        <Label Content="Column2" Height="28" HorizontalAlignment="Left" Margin="328,6,0,0" x:Name="label1_Copy1" VerticalAlignment="Top"/>
+        <Button x:Name="Gobutton" Content="Go" HorizontalAlignment="Left" Margin="656,10,0,0" VerticalAlignment="Top" Width="75" Click="Gobutton_Click"/>
+    </Grid>
+</Window>
