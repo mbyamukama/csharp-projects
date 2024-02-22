@@ -5,6 +5,7 @@ using System.Data;
 using FirebirdSql.Data.FirebirdClient;
 using System.IO;
 using StockApp.AppExtensions;
+using StockApp.EFRIS;
 
 namespace StockApp
 {
@@ -1145,6 +1146,55 @@ namespace StockApp
                 qty = 0;
             }
             return qty;
-        }        
-    }
+        }
+
+		internal static bool AddCommodityCategoryRecords(List<Record> records)
+		{
+			bool success = false;
+			try
+			{
+				using (var transaction = conn.BeginTransaction())
+				{
+					foreach (var record in records)
+					{
+						cmd = new FbCommand(@"INSERT INTO COMMODITYCODES (COMMODITY_CATEGORY_CODE, COMMODITY_CATEGORY_LEVEL, COMMODITY_CATEGORY_NAME, ENABLE_STATUS_CODE, 
+											EXCLUSION, EXEMPT_RATE_START_DATE, IS_EXEMPT, IS_LEAF_NODE, IS_ZERO_RATE, PARENT_CODE, RATE, SERVICE_MARK) VALUES 
+											(@CommodityCategoryCode, @CommodityCategoryLevel, @CommodityCategoryName, @EnableStatusCode, @Exclusion, @ExemptRateStartDate, 
+											@IsExempt, @IsLeafNode, @IsZeroRate, @ParentCode, @Rate, @ServiceMark)", conn, transaction);
+
+						// Add parameters
+						cmd.Parameters.Add("CommodityCategoryCode", record.CommodityCategoryCode);
+						cmd.Parameters.Add("CommodityCategoryLevel", record.CommodityCategoryLevel);
+						cmd.Parameters.Add("CommodityCategoryName", record.CommodityCategoryName);
+						cmd.Parameters.Add("EnableStatusCode", record.EnableStatusCode);
+						cmd.Parameters.Add("Exclusion", record.Exclusion);
+						cmd.Parameters.Add("ExemptRateStartDate", record.ExemptRateStartDate);
+						cmd.Parameters.Add("IsExempt", record.IsExempt);
+						cmd.Parameters.Add("IsLeafNode", record.IsLeafNode);
+						cmd.Parameters.Add("IsZeroRate", record.IsZeroRate);
+						cmd.Parameters.Add("ParentCode", record.ParentCode);
+						cmd.Parameters.Add("Rate", record.Rate);
+						cmd.Parameters.Add("ServiceMark", record.ServiceMark);
+
+						int affectedRows = cmd.ExecuteNonQuery();
+
+						if (affectedRows <= 0)
+						{
+							transaction.Rollback();
+							return false;
+						}
+					}
+
+					transaction.Commit();
+					success = true;
+				}
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show("An error occurred.\nDETAILS: " + ex.Message, "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
+			}
+			return success;
+		}
+
+	}
 }
