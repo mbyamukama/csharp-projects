@@ -26,7 +26,8 @@ namespace StockApp
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            if (GlobalSystemData.Session.CurrentUser.IsStandardUser())
+			WindowStartupLocation = WindowStartupLocation.CenterOwner;
+			if (GlobalSystemData.Session.CurrentUser.IsStandardUser())
             {
                 btnReports.IsEnabled = false;
             }
@@ -43,9 +44,9 @@ namespace StockApp
             new DataViewer("LOG").Show();  
         }
 
-        private void btnRoyalty_Click(object sender, RoutedEventArgs e)
+        private void btnEFRIS_Click(object sender, RoutedEventArgs e)
         {
-            new EFRISWindow().Show();
+            new EFRISWindow(){ Owner=this }.Show();
         }
 
         private void btnSettings_Click(object sender, RoutedEventArgs e)

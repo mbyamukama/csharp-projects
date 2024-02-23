@@ -28,7 +28,7 @@
                     <TextBlock Height="20" Width="36"><Run Text="Users"/></TextBlock>
                 </StackPanel>
             </Button>
-            <Button Height="115" HorizontalAlignment="Left" Margin="400,58,0,0" x:Name="btnRoyalty" VerticalAlignment="Top" Width="139" Click="btnRoyalty_Click">
+            <Button Height="115" HorizontalAlignment="Left" Margin="400,58,0,0" x:Name="btnEFRIS" VerticalAlignment="Top" Width="139" Click="btnEFRIS_Click">
                 <StackPanel>
                     <Image Source="/Resources/ura.png" Height="93" Width="101"/>
                     <TextBlock Height="20" Width="45"><Run Text="EFRIS" /></TextBlock>

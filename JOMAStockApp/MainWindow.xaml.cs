@@ -43,10 +43,10 @@ namespace StockApp
             new SaleWindow().Show();
         }
 
-        private void btnAdmin_Click(object sender, RoutedEventArgs e)
-        {
-            new AdminWindow().Show();
-        }
+		private void btnAdmin_Click(object sender, RoutedEventArgs e)
+		{
+			new AdminWindow() { Owner = this }.Show();
+		}
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {

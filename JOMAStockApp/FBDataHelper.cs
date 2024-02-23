@@ -6,6 +6,7 @@ using FirebirdSql.Data.FirebirdClient;
 using System.IO;
 using StockApp.AppExtensions;
 using StockApp.EFRIS;
+using System.Diagnostics;
 
 namespace StockApp
 {
@@ -1148,9 +1149,9 @@ namespace StockApp
             return qty;
         }
 
-		internal static bool AddCommodityCategoryRecords(List<Record> records)
+		internal static void AddCommodityCategoryRecords(List<Record> records)
 		{
-			bool success = false;
+			int queryCount = 0; // Counter to track the number of queries executed
 			try
 			{
 				using (var transaction = conn.BeginTransaction())
@@ -1176,24 +1177,21 @@ namespace StockApp
 						cmd.Parameters.Add("Rate", record.Rate);
 						cmd.Parameters.Add("ServiceMark", record.ServiceMark);
 
-						int affectedRows = cmd.ExecuteNonQuery();
+						queryCount++; // Increment the counter
+						cmd.ExecuteNonQuery();
 
-						if (affectedRows <= 0)
+						if (queryCount % 1000 == 0) // Check if 1000 queries have been executed
 						{
-							transaction.Rollback();
-							return false;
+							transaction.Commit(); // Commit the transaction
 						}
 					}
-
-					transaction.Commit();
-					success = true;
+					transaction.Commit(); // Commit the remaining queries
 				}
 			}
 			catch (Exception ex)
 			{
 				MessageBox.Show("An error occurred.\nDETAILS: " + ex.Message, "ERROR", MessageBoxButton.OK, MessageBoxImage.Error);
 			}
-			return success;
 		}
 
 	}

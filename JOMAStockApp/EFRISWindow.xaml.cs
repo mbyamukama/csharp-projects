@@ -73,6 +73,7 @@ namespace StockApp
 
 		private void Window_Loaded(object sender, RoutedEventArgs e)
 		{
+			WindowStartupLocation = WindowStartupLocation.CenterOwner;
 			progressBar.Visibility = txtProgress.Visibility = Visibility.Hidden;
 			Window_LoadedAsync(sender, e);
 		}
@@ -82,15 +83,14 @@ namespace StockApp
 		private void btnSyncInventory_Click(object sender, RoutedEventArgs e)
 		{
 			progressBar.Visibility = txtProgress.Visibility = Visibility.Visible;
-			Task.Run(() =>
+			Task task = Task.Run(() =>
 			{
-				int totalPages = 156518; 
+				int pageCount = 150;// 15652; 
 				int pageSize = 10;
-				int count = 0;
 				double percent = 0;
 				DateTime startTime = DateTime.Now;
 
-				for (int pageNo = 1; pageNo <= totalPages; pageNo++)
+				for (int pageNo = 1; pageNo <= pageCount; pageNo++)
 				{
 					if (cancellationTokenSource.Token.IsCancellationRequested)
 						break;
@@ -101,15 +101,15 @@ namespace StockApp
 					//parse to Response
 					CommodityCategoryResponse response = JsonSerializer.Deserialize<CommodityCategoryResponse>(jsonContent, options);
 					FBDataHelper.AddCommodityCategoryRecords(response.Records);
-					count = count + pageSize;
-					percent = Math.Round(count *100.0/ totalPages, 1);
+
+					percent = Math.Round(pageNo * 100.0/ pageCount, 1);
 
 					// Calculate IPS
 					double secondsElapsed = (DateTime.Now - startTime).TotalSeconds;
-					int itemsPerSecond = (int)(count / secondsElapsed);
+					int itemsPerSecond = (int)(pageNo / secondsElapsed);
 
 					// Calculate ETA
-					double itemsRemaining = totalPages - count;
+					double itemsRemaining = pageCount - pageNo;
 					double etaSeconds = itemsRemaining / itemsPerSecond;
 					TimeSpan etaTimeSpan = TimeSpan.FromSeconds(etaSeconds);
 					string etaFormatted = $"{etaTimeSpan:mm\\:ss}";
@@ -117,15 +117,30 @@ namespace StockApp
 					//UI update
 					Application.Current.Dispatcher.Invoke(() =>
 					{
-						txtProgress.Content = count + "/" + totalPages + "  (" + percent + "%)  " + itemsPerSecond+ " items/s  ETA=" + etaFormatted ;
+						txtProgress.Content = pageNo + "/" + pageCount + "  (" + percent + "%)  " + itemsPerSecond+ " items/s  ETA=" + etaFormatted ;
 						progressBar.Value = percent;
 					});
 
 				}
-				Thread.Sleep(50);
+				Thread.Sleep(10);
 			}, cancellationTokenSource.Token);
 
-			//DataTable stock = FBDataHelper.GetStock(FBDataHelper.StockType.Detailed, null, null);
+			task.ContinueWith(t =>
+			{
+				// This part of the code will execute when the task completes
+				if (t.IsFaulted)
+				{
+					// Handle any exceptions
+				}
+				else if (t.IsCanceled)
+				{
+					// Handle cancellation
+				}
+				else
+				{
+					MessageBox.Show("Import Completed", "Complete", MessageBoxButton.OK, MessageBoxImage.Information);
+				}
+			});
 		}
 
 		private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
