@@ -52,9 +52,8 @@ namespace StockApp
         {
             string server = "";
             FBDataHelper.OpenConnection(out server);
-            FirebirdSql.Data.Services.FbServerProperties sp = new FirebirdSql.Data.Services.FbServerProperties(FBDataHelper.connstr2);
 
-            this.Title = "Logged on as: " + GlobalSystemData.Session.CurrentUser.UserName + "@" + server; // + "\t Version: " + sp.GetServerVersion();
+            this.Title = "Logged on as: " + GlobalSystemData.Session.CurrentUser.UserName + "@" + server;
 
             if (!GlobalSystemData.Session.CurrentUser.IsAdmin())
             {

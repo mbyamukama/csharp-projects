@@ -85,7 +85,7 @@ namespace StockApp
 			progressBar.Visibility = txtProgress.Visibility = Visibility.Visible;
 			Task task = Task.Run(() =>
 			{
-				int pageCount = 150;// 15652; 
+				int pageCount = 15652; 
 				int pageSize = 10;
 				double percent = 0;
 				DateTime startTime = DateTime.Now;
@@ -117,12 +117,12 @@ namespace StockApp
 					//UI update
 					Application.Current.Dispatcher.Invoke(() =>
 					{
-						txtProgress.Content = pageNo + "/" + pageCount + "  (" + percent + "%)  " + itemsPerSecond+ " items/s  ETA=" + etaFormatted ;
+						txtProgress.Content = pageNo + "/" + pageCount + "  (" + percent + "%)  " + itemsPerSecond+ " pages/s  ETA=" + etaFormatted ;
 						progressBar.Value = percent;
 					});
 
 				}
-				Thread.Sleep(10);
+				Thread.Sleep(50);
 			}, cancellationTokenSource.Token);
 
 			task.ContinueWith(t =>

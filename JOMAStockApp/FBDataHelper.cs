@@ -1151,42 +1151,36 @@ namespace StockApp
 
 		internal static void AddCommodityCategoryRecords(List<Record> records)
 		{
-			int queryCount = 0; // Counter to track the number of queries executed
 			try
 			{
-				using (var transaction = conn.BeginTransaction())
+				FbTransaction transaction = conn.BeginTransaction();
+
+				foreach (var record in records)
 				{
-					foreach (var record in records)
-					{
-						cmd = new FbCommand(@"INSERT INTO COMMODITYCODES (COMMODITY_CATEGORY_CODE, COMMODITY_CATEGORY_LEVEL, COMMODITY_CATEGORY_NAME, ENABLE_STATUS_CODE, 
+					cmd = new FbCommand(@"INSERT INTO COMMODITYCODES (COMMODITY_CATEGORY_CODE, COMMODITY_CATEGORY_LEVEL, COMMODITY_CATEGORY_NAME, ENABLE_STATUS_CODE, 
 											EXCLUSION, EXEMPT_RATE_START_DATE, IS_EXEMPT, IS_LEAF_NODE, IS_ZERO_RATE, PARENT_CODE, RATE, SERVICE_MARK) VALUES 
 											(@CommodityCategoryCode, @CommodityCategoryLevel, @CommodityCategoryName, @EnableStatusCode, @Exclusion, @ExemptRateStartDate, 
 											@IsExempt, @IsLeafNode, @IsZeroRate, @ParentCode, @Rate, @ServiceMark)", conn, transaction);
 
-						// Add parameters
-						cmd.Parameters.Add("CommodityCategoryCode", record.CommodityCategoryCode);
-						cmd.Parameters.Add("CommodityCategoryLevel", record.CommodityCategoryLevel);
-						cmd.Parameters.Add("CommodityCategoryName", record.CommodityCategoryName);
-						cmd.Parameters.Add("EnableStatusCode", record.EnableStatusCode);
-						cmd.Parameters.Add("Exclusion", record.Exclusion);
-						cmd.Parameters.Add("ExemptRateStartDate", record.ExemptRateStartDate);
-						cmd.Parameters.Add("IsExempt", record.IsExempt);
-						cmd.Parameters.Add("IsLeafNode", record.IsLeafNode);
-						cmd.Parameters.Add("IsZeroRate", record.IsZeroRate);
-						cmd.Parameters.Add("ParentCode", record.ParentCode);
-						cmd.Parameters.Add("Rate", record.Rate);
-						cmd.Parameters.Add("ServiceMark", record.ServiceMark);
-
-						queryCount++; // Increment the counter
-						cmd.ExecuteNonQuery();
-
-						if (queryCount % 1000 == 0) // Check if 1000 queries have been executed
-						{
-							transaction.Commit(); // Commit the transaction
-						}
-					}
-					transaction.Commit(); // Commit the remaining queries
+					// Add parameters
+					cmd.Parameters.Add("CommodityCategoryCode", record.CommodityCategoryCode);
+					cmd.Parameters.Add("CommodityCategoryLevel", record.CommodityCategoryLevel);
+					cmd.Parameters.Add("CommodityCategoryName", record.CommodityCategoryName);
+					cmd.Parameters.Add("EnableStatusCode", record.EnableStatusCode);
+					cmd.Parameters.Add("Exclusion", record.Exclusion);
+					cmd.Parameters.Add("ExemptRateStartDate", record.ExemptRateStartDate);
+					cmd.Parameters.Add("IsExempt", record.IsExempt);
+					cmd.Parameters.Add("IsLeafNode", record.IsLeafNode);
+					cmd.Parameters.Add("IsZeroRate", record.IsZeroRate);
+					cmd.Parameters.Add("ParentCode", record.ParentCode);
+					cmd.Parameters.Add("Rate", record.Rate);
+					cmd.Parameters.Add("ServiceMark", record.ServiceMark);
+					cmd.ExecuteNonQuery();
 				}
+				transaction.Commit();
+				conn.Dispose();
+				conn = new FbConnection(connstr2);
+				conn.Open();
 			}
 			catch (Exception ex)
 			{
