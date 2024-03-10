@@ -1,9 +1,0 @@
-﻿<Window x:Class="FRESUgandaERP.StatementViewer"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Statement Viewer" Height="433" Width="348" Loaded="Window_Loaded">
-    <Grid>
-        <DocumentViewer Name="dViewer" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
-
-    </Grid>
-</Window>
